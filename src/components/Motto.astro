@@ -1,0 +1,27 @@
+---
+import Wormbutton from './Wormbutton.astro';
+---
+
+<div class="motto relative flex flex-col justify-center items-center bottom-6">
+    <svg class="rotate-20 absolute right-[-40px] top-[65px] -translate-y-1/2 w-32 h-32 z-0" viewBox="0 0 10 2">
+      <text x="5" y="1" text-anchor="middle" font-size="3" fill="none" stroke-width=".05" stroke="#fff" font-family="sans-serif">&</text>
+    </svg>
+    <h1 class="font-[karla] text-4xl relative" style="text-shadow: 3px 2px 17px 1px rgba(156, 163, 156, 0.59);"><span class="underline">Airdrop</span> is proprietary software.</h1>
+    <h1 class="font-[karla] text-4xl relative top-3" style="text-shadow: 3px 2px 17px 1px rgba(156, 163, 156, 0.59);">We hate proprietary software.</h1>
+
+    <p class="font-[karla] text-lg mt-5">Wormhole is a free file sharing service between your local devices.</p>
+    <p class="font-[karla] text-lg">- based on Signaling, WebRTC & Socket.io</p>
+
+    <div class="flex flex-col items-center justify-center">
+      <Wormbutton class="top-10"
+      text="Get started" 
+      size="xs" 
+      href="https://local.wormhole.rocks" 
+      />
+      <Wormbutton class="top-12.5"
+      text="Host your own" 
+      size="xs" 
+      href="https://local.wormhole.rocks" 
+      />
+    </div>
+</div>

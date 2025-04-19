@@ -1,0 +1,38 @@
+---
+import Wormbutton from './Wormbutton.astro';
+import GlowCard from './GlowCard.astro';
+---
+
+<div class="why-section relative flex flex-col justify-center items-center py-10">
+  <h1 class="font-[karla] text-4xl relative" style="text-shadow: 3px 2px 17px 1px rgba(156, 163, 156, 0.59);">Why use dis?</h1>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-3xl">
+    <GlowCard
+      title="No Account Needed"
+      description="No email, No password, No account, No tracking. Just send files."
+      color="blue"
+      icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-x-icon lucide-user-x"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" x2="22" y1="8" y2="13"/><line x1="22" x2="17" y1="8" y2="13"/></svg>'
+    />
+    
+    <GlowCard
+      title="Direct Transfer"
+      description="Files transfer directly between your devices through a peer-to-peer connection. Your data never touches any servers — we just help coordinatinating a WebRTC handshake."
+      color="purple"
+      icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server-off-icon lucide-server-off"><path d="M7 2h13a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-5"/><path d="M10 10 2.5 2.5C2 2 2 2.5 2 5v3a2 2 0 0 0 2 2h6z"/><path d="M22 17v-1a2 2 0 0 0-2-2h-1"/><path d="M4 14a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16.5l1-.5.5.5-8-8H4z"/><path d="M6 18h.01"/><path d="m2 2 20 20"/></svg>'
+    />
+    
+    <GlowCard
+      title="Cross-Platform"
+      description="Wormhole works seamlessly on any browser that supports WebRTC!"
+      color="teal"
+      icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-smartphone-icon lucide-monitor-smartphone"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></svg>'
+    />
+    
+    <GlowCard
+      title="Host Your Own"
+      description="Wormhole, including this website is 100% open source. You can host the entire system on your own server, or even run it locally between your devices."
+      color="orange"
+      icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-compare-arrows-icon lucide-git-compare-arrows"><circle cx="5" cy="6" r="3"/><path d="M12 6h5a2 2 0 0 1 2 2v7"/><path d="m15 9-3-3 3-3"/><circle cx="19" cy="18" r="3"/><path d="M12 18H7a2 2 0 0 1-2-2V9"/><path d="m9 15 3 3-3 3"/></svg>'
+    />
+  </div>
+</div>

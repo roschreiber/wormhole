@@ -1,0 +1,28 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "concurrently \"astro dev\" \"node src/server/signaling.js\"",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.4",
+    "buffer": "^6.0.3",
+    "express": "^5.1.0",
+    "http": "^0.0.1-security",
+    "peer": "^1.0.2",
+    "qrcode": "^1.5.4",
+    "simple-peer": "^9.11.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "tailwindcss": "^4.1.4"
+  },
+  "devDependencies": {
+    "@types/simple-peer": "^9.11.8",
+    "concurrently": "^9.1.2"
+  }
+}

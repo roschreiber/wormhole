@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Motto from '../components/Motto.astro';
+import Divider from '../components/Divider.astro';
+import Footer from '../components/Footer.astro';
+import Why from '../components/Why.astro';
+---
+
+<Layout>
+    <Header />
+    
+    <main>
+        <div class="relative flex flex-col min-h-[40vh] items-center justify-center py-10">
+            <Motto />
+            <Divider />
+            <Why />
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

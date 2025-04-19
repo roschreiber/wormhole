@@ -1,0 +1,119 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  color: 'blue' | 'purple' | 'teal' | 'orange' | 'pink' | 'emerald' | 'amber' | 'rose';
+  icon: any; // this is a svg string !
+}
+
+const { title, description, color, icon } = Astro.props;
+
+const colors = {
+  blue: {
+    border: 'border-blue-500/20 hover:border-blue-400/50',
+    shadow: 'hover:shadow-[0_0_15px_rgba(96,165,250,0.3)]',
+    gradient: 'bg-[radial-gradient(circle_at_top_right,transparent_60%,#60a5fa20_90%)]',
+    iconBg: 'bg-blue-950/50',
+    iconBorder: 'border-blue-500/30 group-hover:border-blue-400/60',
+    spinnerBorder: 'border-blue-500/10',
+    iconColor: 'text-blue-400/70 group-hover:text-blue-400',
+    titleColor: 'text-blue-100/90'
+  },
+  purple: {
+    border: 'border-purple-500/20 hover:border-purple-400/50',
+    shadow: 'hover:shadow-[0_0_15px_rgba(192,132,252,0.3)]',
+    gradient: 'bg-[radial-gradient(circle_at_top_right,transparent_60%,#c084fc20_90%)]',
+    iconBg: 'bg-purple-950/50',
+    iconBorder: 'border-purple-500/30 group-hover:border-purple-400/60',
+    spinnerBorder: 'border-purple-500/10',
+    iconColor: 'text-purple-400/70 group-hover:text-purple-400',
+    titleColor: 'text-purple-100/90'
+  },
+  teal: {
+    border: 'border-teal-500/20 hover:border-teal-400/50',
+    shadow: 'hover:shadow-[0_0_15px_rgba(94,234,212,0.3)]',
+    gradient: 'bg-[radial-gradient(circle_at_top_right,transparent_60%,#5eead420_90%)]',
+    iconBg: 'bg-teal-950/50',
+    iconBorder: 'border-teal-500/30 group-hover:border-teal-400/60',
+    spinnerBorder: 'border-teal-500/10',
+    iconColor: 'text-teal-400/70 group-hover:text-teal-400',
+    titleColor: 'text-teal-100/90'
+  },
+  orange: {
+    border: 'border-orange-500/20 hover:border-orange-400/50',
+    shadow: 'hover:shadow-[0_0_15px_rgba(251,146,60,0.3)]',
+    gradient: 'bg-[radial-gradient(circle_at_top_right,transparent_60%,#fb923c20_90%)]',
+    iconBg: 'bg-orange-950/50',
+    iconBorder: 'border-orange-500/30 group-hover:border-orange-400/60',
+    spinnerBorder: 'border-orange-500/10',
+    iconColor: 'text-orange-400/70 group-hover:text-orange-400',
+    titleColor: 'text-orange-100/90'
+  },
+  pink: {
+    border: 'border-pink-500/20 hover:border-pink-400/50',
+    shadow: 'hover:shadow-[0_0_15px_rgba(244,114,182,0.3)]',
+    gradient: 'bg-[radial-gradient(circle_at_top_right,transparent_60%,#f472b620_90%)]',
+    iconBg: 'bg-pink-950/50',
+    iconBorder: 'border-pink-500/30 group-hover:border-pink-400/60',
+    spinnerBorder: 'border-pink-500/10',
+    iconColor: 'text-pink-400/70 group-hover:text-pink-400',
+    titleColor: 'text-pink-100/90'
+  },
+  emerald: {
+    border: 'border-emerald-500/20 hover:border-emerald-400/50',
+    shadow: 'hover:shadow-[0_0_15px_rgba(52,211,153,0.3)]',
+    gradient: 'bg-[radial-gradient(circle_at_top_right,transparent_60%,#34d39920_90%)]',
+    iconBg: 'bg-emerald-950/50',
+    iconBorder: 'border-emerald-500/30 group-hover:border-emerald-400/60',
+    spinnerBorder: 'border-emerald-500/10',
+    iconColor: 'text-emerald-400/70 group-hover:text-emerald-400',
+    titleColor: 'text-emerald-100/90'
+  },
+  amber: {
+    border: 'border-amber-500/20 hover:border-amber-400/50',
+    shadow: 'hover:shadow-[0_0_15px_rgba(251,191,36,0.3)]',
+    gradient: 'bg-[radial-gradient(circle_at_top_right,transparent_60%,#fbbf2420_90%)]',
+    iconBg: 'bg-amber-950/50',
+    iconBorder: 'border-amber-500/30 group-hover:border-amber-400/60',
+    spinnerBorder: 'border-amber-500/10',
+    iconColor: 'text-amber-400/70 group-hover:text-amber-400',
+    titleColor: 'text-amber-100/90'
+  },
+  rose: {
+    border: 'border-rose-500/20 hover:border-rose-400/50',
+    shadow: 'hover:shadow-[0_0_15px_rgba(251,113,133,0.3)]',
+    gradient: 'bg-[radial-gradient(circle_at_top_right,transparent_60%,#fb717320_90%)]',
+    iconBg: 'bg-rose-950/50',
+    iconBorder: 'border-rose-500/30 group-hover:border-rose-400/60',
+    spinnerBorder: 'border-rose-500/10',
+    iconColor: 'text-rose-400/70 group-hover:text-rose-400',
+    titleColor: 'text-rose-100/90'
+  }
+};
+
+const colorClasses = colors[color];
+---
+
+<div class="reason-card group h-full">
+  <div class={`relative bg-black/30 backdrop-blur-sm p-6 rounded-2xl ${colorClasses.border} transition-all duration-500 overflow-hidden ${colorClasses.shadow} h-full flex flex-col`}>
+    <div class={`absolute inset-0 ${colorClasses.gradient} opacity-40 group-hover:opacity-70 transition-opacity duration-500`}></div>
+    
+    <div class={`relative mb-4 h-12 w-12 rounded-full ${colorClasses.iconBg} flex items-center justify-center overflow-hidden border ${colorClasses.iconBorder} transition-all duration-300 flex-shrink-0`}>
+      <div class={`absolute w-[140%] h-[140%] border ${colorClasses.spinnerBorder} rounded-full animate-[spin_25s_linear_infinite]`}></div>
+      <div class={`absolute w-[100%] h-[100%] border ${colorClasses.spinnerBorder} rounded-full animate-[spin_18s_linear_infinite]`}></div>
+      
+      <div class={`relative z-10 ${colorClasses.iconColor} transition-colors duration-300`}>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <Fragment set:html={icon} />
+        </svg>
+      </div>
+    </div>
+    
+    <div class="flex-grow flex flex-col">
+      <h3 class={`font-[krypton] text-xl ${colorClasses.titleColor} tracking-wide mb-2`}>{title}</h3>
+      <p class="font-[karla] text-white/60 leading-relaxed flex-grow">
+        {description}
+      </p>
+    </div>
+  </div>
+</div>
