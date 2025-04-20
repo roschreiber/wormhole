@@ -1,0 +1,23 @@
+---
+const serverDeviceId = 'Loading...';
+---
+
+<div class="user-component">
+  <div class="user-info">
+    <p>Your Device ID: <span id="device-id">{serverDeviceId}</span></p>
+    <p>Username: <span id="username">Loading...</span></p>
+    <div id="avatar-container">
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/scripts/connectSocket.js"></script>
+
+<script>
+  import { getUserInfo } from './scripts/getUserInfo.js';
+  import { getDeviceId } from './scripts/idUtils';
+
+  document.getElementById('device-id').textContent = getDeviceId();
+  document.getElementById('username').textContent = getUserInfo().username;
+  document.getElementById('avatar-container').innerHTML = `<img src="${getUserInfo().avatarUrl}" alt="User Avatar" class="rounded-full w-16 h-16">`;
+</script>

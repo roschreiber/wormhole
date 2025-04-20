@@ -1,0 +1,26 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Project</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-black text-white font-sans min-h-screen">
+		<div class="absolute inset-0 overflow-hidden pointer-events-none">
+			<div class="absolute top-0 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl animate-float"></div>
+			<div class="absolute bottom-0 -right-40 w-[600px] h-[600px] bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl animate-float-delayed"></div>
+			<div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-gradient-to-tr from-white/5 to-transparent rounded-full blur-3xl animate-float-slow"></div>
+		</div>
+		
+		<slot />
+	</body>
+</html>
